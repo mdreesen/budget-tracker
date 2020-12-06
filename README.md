@@ -3,6 +3,9 @@
 ## Description
 This is a budget tracker application. The user can keep track of their spending online and offline.
 
+Deployed application URL:
+https://mysterious-wave-61130.herokuapp.com/
+
 ## Using the application
 npm start - this starts up the application in localhost
 
