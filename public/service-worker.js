@@ -10,11 +10,14 @@ const FILES_TO_CACHE = [
   // Testing the service-worker.js file
 // console.log('looking at the service worker file');
 
-self.addEventListener('install', function (e) {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      console.log('installing cache : ' + CACHE_NAME)
-      return cache.addAll(FILES_TO_CACHE)
+// Install the service worker
+self.addEventListener('install', function(evt) {
+  evt.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      console.log('Your files were pre-cached successfully!');
+      return cache.addAll(FILES_TO_CACHE);
     })
-  )
-})
+  );
+
+  self.skipWaiting();
+});
